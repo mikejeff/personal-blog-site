@@ -1,0 +1,23 @@
+---
+import Social from './Social.astro';
+---
+
+<footer>
+	<div class="site-width">
+		<Social />
+		<p>© <span id="copyrightYear"></span> Michael R Jeffery</p>
+		<p>All rights reserved.</p>
+		<p>Built with Astro.</p>
+		<script>
+			const copyrightYear = document.getElementById("copyrightYear");
+			const year = new Date().getFullYear();
+			if (copyrightYear) {
+				if (year > 2025) {
+					copyrightYear.textContent = "2025-" + year.toString();
+				} else {
+					copyrightYear.textContent = year.toString();
+				}
+			}
+		</script>
+	</div>
+</footer>

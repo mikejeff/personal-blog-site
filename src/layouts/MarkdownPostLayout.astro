@@ -1,0 +1,12 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+---
+<BaseLayout pageTitle={frontmatter.title}>
+<small>Written by {frontmatter.author} on {frontmatter.pubDate.toString().slice(0,10)}</small>
+<div class="display:flex flex-wrap:wrap">
+	{frontmatter.tags.map((tag: string) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
+</div>
+<slot />
+</BaseLayout>
