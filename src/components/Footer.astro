@@ -3,11 +3,10 @@ import Social from './Social.astro';
 ---
 
 <footer>
-	<div class="site-width">
+	<div class="site-inline-size">
 		<Social />
-		<p>© <span id="copyrightYear"></span> Michael R Jeffery</p>
-		<p>All rights reserved.</p>
-		<p>Built with Astro.</p>
+		<small>© <span id="copyrightYear"></span> Michael R Jeffery. All rights reserved.</small>
+		<p>Built with <a href="https://astro.build/">Astro</a></p>
 		<script>
 			const copyrightYear = document.getElementById("copyrightYear");
 			const year = new Date().getFullYear();

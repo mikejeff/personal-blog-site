@@ -4,9 +4,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-<small>Written by {frontmatter.author} on {frontmatter.pubDate.toString().slice(0,10)}</small>
-<div class="display:flex flex-wrap:wrap">
-	{frontmatter.tags.map((tag: string) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
-</div>
+	<h1>{frontmatter.headline}</h1>
+	<p><small>Written by {frontmatter.author} on {frontmatter.pubDate.toString().slice(0,10)}</small></p>
+
 <slot />
+
+<p class="tag-container">
+	{frontmatter.tags.map((tag: string) => <a class="tag" href={`/tags/${tag}`}>{tag}</a>)}
+</p>
+
 </BaseLayout>

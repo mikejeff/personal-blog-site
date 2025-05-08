@@ -5,7 +5,9 @@ const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat
 const pageTitle = "Tag Index";
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<div class="display:flex flex-wrap:wrap">
-		{tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
-	</div>
+	<h1>Tags</h1>
+	<p>The list below is a collection of tags used to categorize blog posts on this site.</p>
+	<ul>
+		{tags.map((tag) => <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>)}
+	</ul>
 </BaseLayout>
