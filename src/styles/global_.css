@@ -1,0 +1,585 @@
+:root {
+	--measure: 60ch;
+
+	/* Modular Scale */
+	--ratio: 1.5;
+
+	--s-5: calc(var(--s-4) / var(--ratio));
+	--s-4: calc(var(--s-3) / var(--ratio));
+	--s-3: calc(var(--s-2) / var(--ratio));
+	--s-2: calc(var(--s-1) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+	--s0: 1.6rem;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s1) * var(--ratio));
+	--s3: calc(var(--s2) * var(--ratio));
+	--s4: calc(var(--s3) * var(--ratio));
+	--s5: calc(var(--s4) * var(--ratio));
+	/* Modular Scale */
+
+	/* Typography */
+	--heading-font-fam: "Montserrat", sans-serif;
+	--body-font-fam: "Esteban", serif;
+	--line-height-small:calc(0.8*var(--ratio));
+	/* Colors */
+	--color-black: hsl(0, 0%, 5%);
+	--color-yellow: yellow;
+
+	background-color: hsl(180, 5%, 95%);
+	color: var(--color-black);
+	font-family: var(--body-font-fam);
+	font-size: clamp(20px, 2.5vw, 24px);
+	line-height: var(--s0);
+}
+
+/* *** Layout *** */
+.stack {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.stack > * {
+	margin-block: 0;
+} 
+
+.stack > * + * {
+	margin-block-start: var(--space, 1.5rem);
+}
+/* *** /Layout *** */
+
+/* *** Global *** */
+/* html {} */
+
+* {
+	max-inline-size: var(--measure);
+}
+
+body,
+div,
+footer,
+header,
+html,
+main,
+nav {
+	max-inline-size: none;
+}
+
+/* Header */
+header {
+	background-color: hsl(180, 5%, 91%);
+	border-block-end: 1px solid hsl(180, 5%, 88%);
+	padding-block: var(--s-1);
+}
+
+.site-identity {
+	display: inline-block;
+	max-inline-size: min-content;
+}
+
+.site-identity__link {
+	aspect-ratio: 1/1;
+	border: 3px solid;
+	display: block;
+	font-family: var(--heading-font-fam);
+	font-size: 1.25rem;
+	font-weight: 900;
+	letter-spacing: 0.025em;
+	padding: 0.5rem;
+	padding: var(--s-2);
+}
+
+.site-identity__link,
+.site-identity__link:visited {
+	color:var(--color-black);
+	text-decoration: none;
+}
+
+.site-identity__link:hover {
+	background: var(--color-yellow);
+}
+
+.header-nav {
+	display: inline-block;
+}
+
+.header-nav__link {
+	font-family: var(--heading-font-fam);
+	font-weight: 500;
+	padding: var(--s-3);
+	text-decoration: none;
+}
+
+.header-nav__link,
+.header-nav__link:visited {
+	color: var(--color-black);
+}
+
+.header-nav__link:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	background:  var(--color-yellow);
+}
+
+/* Footer */
+footer {
+	/* background-color: hsl(180, 5%, 91%); */
+	border-block-start: 1px solid hsl(180, 5%, 88%);
+	font-family: var(--heading-font-fam);
+	padding-block: var(--s-1);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: var(--heading-font-fam);
+	font-weight: 800;
+	letter-spacing: 0.05rem;
+	line-height: var(--line-height-small);
+	margin-block-end: var(--s-1);
+	text-wrap: balance;
+}
+
+h1, .h1 {
+	font-size: var(--s1);
+}
+
+a {
+	color: #107EA2;
+	font-weight: bold;
+}
+
+a:visited {
+	color: hsl(260, 100%, 46.7%);
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active,
+a:hover:active {
+	color: hsl(260, 100%, 66.7%);
+}
+
+a:focus-visible {
+	outline-color: currentColor;
+	outline-offset: 0.25em;
+	outline-width: 0.25em;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+p:not(:first-of-type) {
+	margin-block-start: var(--s-1);
+}
+
+ul {
+	list-style: square;
+}
+
+.content-body {
+
+	padding-block: var(--s-1);
+}
+
+.site-inline-size {
+	inline-size: 90%;
+	max-inline-size: 1000px;
+	margin-inline: auto;
+}
+
+.tag-container {
+	display: flex;
+	gap: 5px;
+}
+
+/* TODO: dark mode
+@media (prefers-color-scheme: dark) {
+
+} */
+
+
+/* @link https://utopia.fyi/type/calculator?c=360,16,1.2,1600,21,1.25,6,2,1200&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+	--measure: 60ch;
+	/* Step -2: 11.1111px → 13.44px */
+	--step--2: clamp(0.6944rem, 0.6522rem + 0.1878vi, 0.84rem);
+	/* Step -1: 13.3333px → 16.8px */
+	--step--1: clamp(0.8333rem, 0.7704rem + 0.2796vi, 1.05rem);
+	/* Step 0: 16px → 21px */
+	--step-0: clamp(1rem, 0.9093rem + 0.4032vi, 1.3125rem);
+	/* Step 1: 19.2px → 26.25px */
+	--step-1: clamp(1.2rem, 1.0721rem + 0.5685vi, 1.6406rem);
+	/* Step 2: 23.04px → 32.8125px */
+	--step-2: clamp(1.44rem, 1.2627rem + 0.7881vi, 2.0508rem);
+	/* Step 3: 27.648px → 41.0156px */
+	--step-3: clamp(1.728rem, 1.4854rem + 1.078vi, 2.5635rem);
+	/* Step 4: 33.1776px → 51.2695px */
+	--step-4: clamp(2.0736rem, 1.7453rem + 1.459vi, 3.2043rem);
+	/* Step 5: 39.8131px → 64.0869px */
+	--step-5: clamp(2.4883rem, 2.0479rem + 1.9576vi, 4.0054rem);
+	/* Step 6: 47.7757px → 80.1086px */
+	--step-6: clamp(2.986rem, 2.3993rem + 2.6075vi, 5.0068rem);
+	/* Step 7: 57.3309px → 100.1358px */
+	--step-7: clamp(3.5832rem, 2.8065rem + 3.452vi, 6.2585rem);
+	/* Step 8: 68.7971px → 125.1698px */
+	--step-8: clamp(4.2998rem, 3.2769rem + 4.5462vi, 7.8231rem);
+
+	/* modular scale */
+	--base: clamp(1rem, 0.89rem + 0.48vi, 1.25rem);
+
+	/* endpoints for the ratio */
+	--min-ratio: 1.20;
+	/* small screens */
+	--max-ratio: 1.333;
+	/* large screens */
+
+	/* viewport range where interpolation happens */
+	--min-vw: 375px;
+	--max-vw: 1200px;
+
+	/* normalized interpolation factor t in [0,1] */
+	--t: clamp(0, (100vw - var(--min-vw)) / (var(--max-vw) - var(--min-vw)), 1);
+
+	/* unitless, smoothly interpolated ratio */
+	--ratio: calc(var(--min-ratio) + (var(--max-ratio) - var(--min-ratio)) * var(--t));
+
+	--s-6: calc(var(--base) * pow(var(--ratio), 6));
+	--s-5: calc(var(--base) * pow(var(--ratio), 5));
+	--s-4: calc(var(--base) * pow(var(--ratio), 4));
+	--s-3: calc(var(--base) * pow(var(--ratio), 3));
+	--s-2: calc(var(--base) * pow(var(--ratio), 2));
+	--s-1: calc(var(--base) * pow(var(--ratio), 1));
+	--s-0: var(--base);
+	--s--1: calc(var(--base) / pow(var(--ratio), 1));
+	--s--2: calc(var(--base) / pow(var(--ratio), 2));
+
+	--line-height: var(--ratio);
+	--line-height-small: calc((0.9 * var(--ratio)) - 0.1 * var(--t));
+	--line-height-mini: calc((0.75 * var(--ratio)) - 0.1 * var(--t));
+
+	--weight-regular: 400;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
+
+	--blue-400: oklch(0.66 0.19 265);
+	--blue-500: oklch(0.53 0.28 265);
+	--blue-600: oklch(0.52 0.29 265);
+	--blue-700: oklch(0.43 0.3 265);
+	--purple-400: oklch(0.69 0.29 320);
+	--purple-500: oklch(0.55 0.28 320);
+	--purple-600: oklch(0.53 0.27 320);
+	--purple-700: oklch(0.43 0.22 320);
+}
+
+main>* {
+	margin-inline: auto;
+}
+
+section>*+* {
+	margin-block-start: var(--s-0);
+}
+
+* {
+	max-inline-size: var(--measure);
+	font-size: var(--step-0);
+	text-underline-offset: 3px;
+	/* outline:1px solid white; */
+	outline-offset: 5px;
+}
+
+*:focus-visible {
+	outline-color: lime;
+}
+
+::selection,
+mark {
+	background: lime;
+	color: #000;
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+	max-inline-size: none;
+}
+
+html {
+	background-color: light-dark(hsl(0 0% 98% / 1), hsl(0 0% 7% / 1));
+	color: light-dark(hsl(0 0% 7% / 1), hsl(0 0% 98% / 1));
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+}
+
+[data-theme="light"] {
+	color-scheme: light;
+}
+
+body {
+	padding: var(--s-1);
+}
+
+a:link {
+	--color: light-dark(var(--blue-600), var(--blue-500));
+	/* color: color-mix(in srgb, var(--color), black 63%); */
+	/* color: light-dark(color-mix(in srgb, var(--blue-600), black 63%), color-mix(in srgb, var(--blue-500), white 44%)); */
+	color: inherit;
+	font-weight: var(--weight-semibold);
+	text-decoration-color: color-mix(in srgb, var(--color), transparent 37%);
+	text-decoration-thickness: 0.15em;
+	transition: all 80ms ease-in-out;
+}
+
+a:visited {
+	color: inherit;
+	font-weight: var(--weight-bold);
+	text-decoration-color: light-dark(var(--purple-700), var(--purple-600));
+}
+
+a:hover {
+	text-decoration-color: color-mix(in srgb, var(--color), transparent 0%);
+}
+
+a:active {
+	transform: scale(10%);
+	display:inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--weight-bold);
+	line-height: 1;
+	margin-block-end: var(--s-2);
+	margin-block-start: var(--s-4);
+	text-box: trim-both cap alphabetic;
+  	font-optical-sizing: auto;
+	font-weight: 900;
+	font-style: normal;
+	font-kerning: normal;
+}
+
+h1 {
+	font-size: var(--step-5);
+	font-size: var(--s-5);
+}
+
+h2 {
+	font-size: var(--step-4);
+	font-size: var(--s-4);
+}
+
+h3 {
+	font-size: var(--step-3);
+	font-size: var(--s-3);
+}
+
+h4 {
+	font-size: var(--step-2);
+	font-size: var(--s-2);
+}
+
+h5 {
+	font-size: var(--step-1);
+	font-size: var(--s-1);
+}
+
+h6 {
+	font-size: var(--step-0);
+	font-size: var(--s-0);
+}
+
+*+h2 {
+	margin-block-start: var(--s-4);
+}
+
+header:has(nav) * {
+	display: inline;
+}
+header:has(nav) *+* {
+	/* display: inline; */
+	/* outline: 1px solid red; */
+	/* margin-inline-start: 6rem; */
+}
+
+header:has(nav) > :last-child {
+	/* outline: 1px solid orange; */
+	margin-inline-start: var(--s-1);
+	/* float: right; */
+}
+
+nav * {
+	/* list-style-type: none; */
+	/* outline: 1px solid green; */
+}
+
+nav>*+* {
+	margin-inline-start: var(--s-1);
+	/* outline: 1px solid yellow; */
+}
+
+nav ul>*+* {
+	margin-inline-start: var(--s--2);
+	/* outline: 1px solid hotpink; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@layer reset {
+	/* *** CSS Reset ***
+
+*** https://piccalil.li/blog/a-modern-css-reset */ 
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	color-scheme: light dark;
+	font: 16px / 1.4 system-ui, sans-serif;
+	hanging-punctuation: first allow-end last;
+	tab-size: 2;
+	word-break: break-word;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	display: block;
+	max-inline-size: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	/* FUTURE: appearance: base; */
+}
+
+/* Adjust size and position of superscript and subscript elements */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	inset-block-end: -0.25em;
+}
+
+sup {
+	inset-block-start: -0.5em;
+}
+
+/* SVGs match color of adjacent text */
+svg {
+	fill: currentColor;
+}
+
+/* rules are simple lines */
+hr {
+	border-style: solid;
+	border-width: 1px 0 0;
+	color: inherit;
+	height: 0;
+	overflow: visible;
+	margin-block: 2.5rem;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+/* *** /CSS Reset *** */
+}
