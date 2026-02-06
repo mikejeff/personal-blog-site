@@ -9,8 +9,8 @@ import '../styles/global.css';
 
 <slot />
 
-<p class="tag-container">
-	{frontmatter.tags.map((tag: string) => <a class="tag" href={`/tags/${tag}`}>{tag}</a>)}
-</p>
+<ul class="list--inline">
+	{frontmatter.tags.map((tag: string) => <li><a href={`/tags/${tag}`}>{tag}</a></li>)}
+</ul>
 
 </BaseLayout>
