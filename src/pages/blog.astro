@@ -6,10 +6,8 @@ const pageTitle = "Mike Jeffery | Recent Posts";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-			<p>
-				<h1>Recent Posts:</h1>
-			</p>
-			<ul>
-				{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-			</ul>
+	<h1>Recent Posts:</h1>
+	<ul>
+		{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+	</ul>
 </BaseLayout>
