@@ -1,0 +1,39 @@
+:root{
+	/* color */
+
+	--color-white: #fff;
+	--color-paper: #f6f4f1;
+	--color-stone: #e4ded2;
+	--color-grapite: #403d39;
+	--color-orange: #ff5514;
+	--color-black: #000;
+	--site-logo-line: light-dark(var(--color-black), var(--color-orange));
+	--site-logo-bg: light-dark(transparent, transparent);
+	--site-bg-primary: light-dark(var(--color-paper), var(--color-black));
+	--site-fg-primary: light-dark(var(--color-black), var(--color-white));
+
+	/* typography */
+
+	/* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--s--2: clamp(0.7035rem, 0.8131rem + -0.1414vw, 0.7813rem);
+	--s--1: clamp(0.9375rem, 0.9374rem + 0.0004vw, 0.9377rem);
+	--s-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+	--s-1: clamp(1.35rem, 1.2206rem + 0.575vw, 1.6663rem);
+	--s-2: clamp(1.62rem, 1.3741rem + 1.0929vw, 2.2211rem);
+	--s-3: clamp(1.944rem, 1.5281rem + 1.8486vw, 2.9607rem);
+	--s-4: clamp(2.3328rem, 1.6726rem + 2.9343vw, 3.9467rem);
+	--s-5: clamp(2.7994rem, 1.7924rem + 4.4755vw, 5.2609rem);
+	--s-6: clamp(3.3592rem, 1.8646rem + 6.6428vw, 7.0128rem);
+
+	/* spacing */
+	--space-xxs: calc(var(--s--2) * 0.5);
+	--space-xs:  calc(var(--s--1) * 0.6);
+	--space-sm:  calc(var(--s-0) * 0.75);
+	--space-m:  var(--s-0);
+	--space-lg:  calc(var(--s-1) * 0.9);
+	--space-xl:  var(--s-2);
+
+	/* other */
+	--wrapper-max-width: 1680px;
+
+}

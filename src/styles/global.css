@@ -1,292 +1,77 @@
 :root {
-	--measure: 60ch;
-
-	/* Modular Scale */
-	--ratio: 1.5;
-
-	--s-5: calc(var(--s-4) / var(--ratio));
-	--s-4: calc(var(--s-3) / var(--ratio));
-	--s-3: calc(var(--s-2) / var(--ratio));
-	--s-2: calc(var(--s-1) / var(--ratio));
-	--s-1: calc(var(--s0) / var(--ratio));
-	--s0: 1.6rem;
-	--s1: calc(var(--s0) * var(--ratio));
-	--s2: calc(var(--s1) * var(--ratio));
-	--s3: calc(var(--s2) * var(--ratio));
-	--s4: calc(var(--s3) * var(--ratio));
-	--s5: calc(var(--s4) * var(--ratio));
-	/* Modular Scale */
-
-	/* Typography */
-	--heading-font-fam: "Montserrat", sans-serif;
-	--body-font-fam: "Esteban", serif;
-	--line-height-small:calc(0.8*var(--ratio));
-	/* Colors */
-	--color-black: hsl(0, 0%, 5%);
-	--color-yellow: yellow;
-
-	background-color: hsl(180, 5%, 95%);
-	color: var(--color-black);
-	font-family: var(--body-font-fam);
-	font-size: clamp(20px, 2.5vw, 24px);
-	line-height: var(--s0);
+	color-scheme: light dark;
 }
 
-/* *** CSS Reset ***
-
-*** https://piccalil.li/blog/a-modern-css-reset */ 
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+html {
+	font-size: 100%;
+	background: var(--site-bg-primary, black);
+	color: var(--site-fg-primary, white);
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+body {
+	font-family: 'Source Sans 3 Variable', sans-serif;
+	font-optical-sizing: auto;
+	font-size: var(--s-0);
+	font-style: normal;
+	font-weight: 400;
 	margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-	list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-	scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
-body {
-	line-height: 1.5;
-	min-height: 100vh;
-	text-rendering: optimizeSpeed;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-	display: block;
-	max-inline-size: 100%;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-	font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-}
-/* *** /CSS Reset *** */
-
-/* *** Layout *** */
-.stack {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-}
-
-.stack > * {
-	margin-block: 0;
-} 
-
-.stack > * + * {
-	margin-block-start: var(--space, 1.5rem);
-}
-/* *** /Layout *** */
-
-/* *** Global *** */
-/* html {} */
-
-* {
-	max-inline-size: var(--measure);
-}
-
-body,
-div,
-footer,
-header,
-html,
-main,
-nav {
-	max-inline-size: none;
-}
-
-/* Header */
-header {
-	background-color: hsl(180, 5%, 91%);
-	border-block-end: 1px solid hsl(180, 5%, 88%);
-	padding-block: var(--s-1);
-}
-
-.site-identity {
-	display: inline-block;
-	max-inline-size: min-content;
-}
-
-.site-identity__link {
-	aspect-ratio: 1/1;
-	border: 3px solid;
-	display: block;
-	font-family: var(--heading-font-fam);
-	font-size: 1.25rem;
-	font-weight: 900;
-	letter-spacing: 0.025em;
-	padding: 0.5rem;
-	padding: var(--s-2);
-}
-
-.site-identity__link,
-.site-identity__link:visited {
-	color:var(--color-black);
-	text-decoration: none;
-}
-
-.site-identity__link:hover {
-	background: var(--color-yellow);
-}
-
-.header-nav {
-	display: inline-block;
-}
-
-.header-nav__link {
-	font-family: var(--heading-font-fam);
-	font-weight: 500;
-	padding: var(--s-3);
-	text-decoration: none;
-}
-
-.header-nav__link,
-.header-nav__link:visited {
-	color: var(--color-black);
-}
-
-.header-nav__link:hover {
-	text-decoration: underline;
-	text-decoration-thickness: 0.1em;
-	background:  var(--color-yellow);
-}
-
-/* Footer */
-footer {
-	/* background-color: hsl(180, 5%, 91%); */
-	border-block-start: 1px solid hsl(180, 5%, 88%);
-	font-family: var(--heading-font-fam);
-	padding-block: var(--s-1);
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-	font-family: var(--heading-font-fam);
-	font-weight: 800;
-	letter-spacing: 0.05rem;
-	line-height: var(--line-height-small);
-	margin-block-end: var(--s-1);
-	text-wrap: balance;
-}
-
-h1, .h1 {
-	font-size: var(--s1);
-}
-
-a {
-	color: #107EA2;
-	font-weight: bold;
-}
-
-a:visited {
-	color: hsl(260, 100%, 46.7%);
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-a:active,
-a:hover:active {
-	color: hsl(260, 100%, 66.7%);
-}
-
-a:focus-visible {
-	outline-color: currentColor;
-	outline-offset: 0.25em;
-	outline-width: 0.25em;
-}
-
 p {
-	text-wrap: pretty;
+	max-width: 60ch;
 }
 
-p:not(:first-of-type) {
-	margin-block-start: var(--s-1);
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Serif 4 Variable', serif;
+	font-weight: 800;
+
+	/* letter-spacing: -1.1px; */
 }
 
-ul {
-	list-style: square;
+/* classes */
+
+/* utilities */
+.list--inline {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
-.content-body {
-
-	padding-block: var(--s-1);
+.list--inline li {
+	display: inline;
 }
 
-.site-inline-size {
-	inline-size: 90%;
-	max-inline-size: 1000px;
-	margin-inline: auto;
+.list--inline *+* {
+	margin-inline-start: var(--space-xxs);
 }
 
-.tag-container {
-	display: flex;
-	gap: 5px;
+/* header */
+.header__grid {
+	display: grid;
+	gap:var(--space-sm);
+	padding-block: var(--space-lg);
+	/* grid-template-columns: 1fr 1fr 1fr; */
+	border-bottom: 1px solid;
+	border-color: light-dark(#333b3c, #efefec);
 }
 
-/* TODO: dark mode
-@media (prefers-color-scheme: dark) {
+.header__logo {
 
-} */
+	max-width: 10rem;
+	max-width: 5rem;
+}
+
+.header__logo a {
+	display: block; /* Make the anchor tag a block-level element */
+	height: 100%; /* Make the anchor tag take the full height of its parent container */
+	width: 100%;
+}
+
+.header__logo svg {
+	display: block; /* Change default inline display to block to remove extra spacing */
+	height: 100%; /* Make the SVG take the full height of the anchor tag */
+	width: 100%; /* Make the SVG take the full width of the anchor tag */
+}
+
+
+
