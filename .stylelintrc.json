@@ -1,0 +1,29 @@
+{
+	"extends": "stylelint-config-standard",
+	"rules": {
+		"property-no-vendor-prefix": [
+			true,
+			{
+				"ignoreProperties": [
+					"transform",
+					"/^animation-/",
+					"text-size-adjust"
+				]
+			}
+		],
+		"value-keyword-case": [
+			"lower",
+			{
+				"ignoreKeywords": [
+					"currentColor"
+				]
+			}
+		],
+		 "custom-property-pattern": [
+      "^([a-z]+(-[a-z]+)*---?\\d+|[a-z]+(-[a-z0-9]+)*)$",
+      {
+        "message": "Expected custom property to be kebab-case (color-red, s-1) or scale-based (s--1)"
+      }
+    ]
+	}
+}
