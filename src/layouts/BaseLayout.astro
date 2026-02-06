@@ -1,32 +1,30 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/source-sans-3';
+import '../styles/reset.css';
+import '../styles/custom-properties.css';
+import '../styles/layout.css';
 import '../styles/global.css';
 const { pageTitle } = Astro.props;
 ---
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="stack stack-xl">
     <Header />
-		<div class="content-body">
-			<div class="site-inline-size">
-				<div>
+		<main>
+			<div class="wrapper">
+				<article class="stack stack-m">
 					<slot />
-				</div>
+				</article>
 			</div>
-		</div>
+		</main>
 		<Footer />
-		<!-- <script>
-			import "../scripts/menu.js";
-		</script> -->
 	</body>
 </html>
