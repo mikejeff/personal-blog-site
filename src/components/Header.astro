@@ -1,11 +1,17 @@
 ---
-import Navigation from "./Navigation.astro"
+import Logo from "./Site-logo.astro";
+import Navigation from "./Navigation.astro";
 ---
+
 <header>
-	<div class="site-inline-size">
-		<div class="site-identity">
-			<a href="/" class="site-identity__link">MJ</a>
+	<div class="wrapper">
+		<div class="header__grid">
+			<div class="header__logo">
+				<a href="/"><Logo /></a>
+			</div>
+			<div>
+				<Navigation />
+			</div>
 		</div>
-		<Navigation />
 	</div>
 </header>
