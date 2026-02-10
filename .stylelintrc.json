@@ -19,11 +19,18 @@
 				]
 			}
 		],
-		 "custom-property-pattern": [
-      "^([a-z]+(-[a-z]+)*---?\\d+|[a-z]+(-[a-z0-9]+)*)$",
-      {
-        "message": "Expected custom property to be kebab-case (color-red, s-1) or scale-based (s--1)"
-      }
-    ]
+		"custom-property-pattern": [
+			"^([a-z]+(-[a-z]+)*---?\\d+|[a-z]+(-[a-z0-9]+)*)$",
+			{
+				"message": "Expected custom property to be kebab-case (color-red, s-1) or scale-based (s--1)"
+			}
+		],
+		"selector-class-pattern": [
+			"^[a-z]([-]?[a-z0-9]+)*(__[a-z0-9]([-]?[a-z0-9]+)*)?(--[a-z0-9]([-]?[a-z0-9]+)*)?$",
+			{
+				"resolveNestedSelectors": true,
+				"message": "Expected class selector to match BEM CSS pattern (Block__Element--Modifier)"
+			}
+		]
 	}
 }
