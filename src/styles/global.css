@@ -3,12 +3,13 @@
 }
 
 html {
+	background: var(--site-bg-dark, black);
+	color: var(--site-fg-muted, white);
 	font-size: 100%;
-	background: var(--site-bg-primary, black);
-	color: var(--site-fg-primary, white);
 }
 
 body {
+	background-color: var(--site-bg, black);
 	font-family: 'Source Sans 3 Variable', sans-serif;
 	font-optical-sizing: auto;
 	font-size: var(--s-0);
@@ -17,15 +18,32 @@ body {
 	margin: 0;
 }
 
+a:not([class]) {
+	color: var(--site-fg, white);
+}
+
+a:hover:not([class]) {
+	color: var(--color-accent, orangered);
+	text-decoration: none;
+}
+
 p {
 	max-width: 60ch;
+	text-wrap: pretty;
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: var(--site-fg, black);
 	font-family: 'Source Serif 4 Variable', serif;
 	font-weight: 800;
+	letter-spacing: -1.1px;
+	max-width:40ch;
+	text-box-edge: cap alphabetic;
+	text-box-trim: trim-both;
+}
 
-	/* letter-spacing: -1.1px; */
+h1 {
+	font-size: var(--s-4)
 }
 
 /* classes */
@@ -47,31 +65,26 @@ h1, h2, h3, h4, h5, h6 {
 
 /* header */
 .header__grid {
+	background-color: var(--site-bg-light);
+	border-bottom: 1px solid;
+	border-color: var(--site-fg-muted);
 	display: grid;
 	gap:var(--space-sm);
 	padding-block: var(--space-lg);
-	/* grid-template-columns: 1fr 1fr 1fr; */
-	border-bottom: 1px solid;
-	border-color: light-dark(#333b3c, #efefec);
 }
 
 .header__logo {
-
-	max-width: 10rem;
 	max-width: 5rem;
 }
 
 .header__logo a {
-	display: block; /* Make the anchor tag a block-level element */
-	height: 100%; /* Make the anchor tag take the full height of its parent container */
+	display: block;
+	height: 100%;
 	width: 100%;
 }
 
 .header__logo svg {
-	display: block; /* Change default inline display to block to remove extra spacing */
-	height: 100%; /* Make the SVG take the full height of the anchor tag */
-	width: 100%; /* Make the SVG take the full width of the anchor tag */
+	display: block;
+	height: 100%;
+	width: 100%;
 }
-
-
-

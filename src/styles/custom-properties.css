@@ -1,16 +1,35 @@
 :root{
 	/* color */
 
-	--color-white: #fff;
-	--color-paper: #f6f4f1;
-	--color-stone: #e4ded2;
-	--color-grapite: #403d39;
-	--color-orange: #ff5514;
-	--color-black: #000;
-	--site-logo-line: light-dark(var(--color-black), var(--color-orange));
-	--site-logo-bg: light-dark(transparent, transparent);
-	--site-bg-primary: light-dark(var(--color-paper), var(--color-black));
-	--site-fg-primary: light-dark(var(--color-black), var(--color-white));
+	/* dark mode */
+	--color-black: hsl(0deg 0% 0% / 100%);
+	--color-black5: hsl(0deg 0% 5% / 100%);
+	--color-black10: hsl(0deg 0% 10% / 100%);
+	--color-black30: hsl(0deg 0% 30% / 100%); /* don't use this one for BG */
+
+	/* light mode */
+	--color-white: hsl(0deg 0% 100% / 100%);
+	--color-white95: hsl(0deg 0% 95% / 100%);
+	--color-white90: hsl(0deg 0% 90% / 100%);
+	--color-white70: hsl(0deg 0% 70% / 100%); /* don't use this one for BG */
+
+	/* accent */
+	--color-orange: oklch(67.85% 0.2145 38.061deg);
+	--color-orange-light: oklch(81.55% 0.1093 42.22deg);
+  --color-orange-dark: oklch(40.31% 0.1448 34.04deg);
+	--color-accent: light-dark(var(--color-orange-dark), var(--color-orange-light));
+
+
+	/* site logo */
+	--site-logo-line: var(--color-orange);
+	--site-logo-bg: transparent;
+
+	/* other */
+	--site-bg-light: light-dark(var(--color-white), var(--color-black10));
+	--site-bg: light-dark(var(--color-white95), var(--color-black5));
+	--site-bg-dark: light-dark(var(--color-white90), var(--color-black));
+	--site-fg: light-dark(var(--color-black), var(--color-white));
+	--site-fg-muted: light-dark(var(--color-black30), var(--color-white70));
 
 	/* typography */
 
