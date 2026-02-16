@@ -18,11 +18,15 @@ body {
 	margin: 0;
 }
 
-a:not([class]) {
+main {
+	flex: 1;
+}
+
+a {
 	color: var(--site-fg, white);
 }
 
-a:hover:not([class]) {
+a:hover {
 	color: var(--color-accent, orangered);
 	text-decoration: none;
 }
@@ -64,10 +68,13 @@ h1 {
 }
 
 /* header */
-.header__grid {
+.header {
 	background-color: var(--site-bg-light);
 	border-bottom: 1px solid;
 	border-color: var(--site-fg-muted);
+}
+
+.header__grid {
 	display: grid;
 	gap:var(--space-sm);
 	padding-block: var(--space-lg);
@@ -87,4 +94,14 @@ h1 {
 	display: block;
 	height: 100%;
 	width: 100%;
+}
+
+/* footer */
+
+.footer {
+	background-color: var(--site-bg-dark);
+}
+
+.footer__grid {
+	padding-block: var(--space-lg);
 }
