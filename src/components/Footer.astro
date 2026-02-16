@@ -2,11 +2,12 @@
 import Social from './Social.astro';
 ---
 
-<footer>
-	<div class="wrapper">
+<footer class="footer">
+	<div class="wrapper footer__grid stack stack-m">
 		<Social />
-		<small>© <span id="copyrightYear"></span> Michael R Jeffery. All rights reserved.</small>
-		<p>Built with <a href="https://astro.build/">Astro</a></p>
+			<div>
+				<small>© <span id="copyrightYear"></span> Michael R Jeffery. All rights reserved. Built with <a href="https://astro.build/">Astro</a>.</small>
+			</div>
 		<script>
 			const copyrightYear = document.getElementById("copyrightYear");
 			const year = new Date().getFullYear();

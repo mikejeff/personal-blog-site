@@ -6,30 +6,46 @@
 
 .stack > * {
 	margin-block: 0;
-} 
+}
 
 .stack-xxs > * + * {
-	margin-block-start: var(--space-xxs, 1.5rem);
+	--stack-space: var(--space-xxs);
+	
+	margin-block-start: var(--stack-space, 1.5rem);
 }
 
 .stack-xs > * + * {
-	margin-block-start: var(--space-xs, 1.5rem);
+	--stack-space: var(--space-xs);
+
+	margin-block-start: var(--stack-space, 1.5rem);
 }
 
 .stack-sm > * + * {
-	margin-block-start: var(--space-sm);
+	--stack-space: var(--space-sm);
+
+	margin-block-start: var(--stack-space);
 }
 
 .stack-m > * + * {
-	margin-block-start: var(--space-m, 1.5rem);
+	--stack-space: var(--space-m);
+
+	margin-block-start: var(--stack-space, 1.5rem);
 }
 
 .stack-lg > * + * {
-	margin-block-start: var(--space-lg);
+	--stack-space: var(--space-lg);
+
+	margin-block-start: var(--stack-space, 1.5rem);
 }
 
 .stack-xl > * + * {
-	margin-block-start: var(--space-xl);
+	--stack-space: var(--space-xl);
+
+	margin-block-start: var(--stack-space, 1.5rem);
+}
+
+.stack > :is(h1, h2, h3, h4, h5, h6) + * {
+	margin-block-start: calc(var(--stack-space) * 2);
 }
 
 .wrapper {
