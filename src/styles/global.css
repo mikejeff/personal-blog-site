@@ -23,8 +23,8 @@ main {
 }
 
 a {
-	color: var(--site-fg, white);
 	border-radius: 5px;
+	color: var(--site-fg, white);
 	outline-offset: 2px;
 	transition: all ease-in-out 100ms;
 }
