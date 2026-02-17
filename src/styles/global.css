@@ -24,11 +24,14 @@ main {
 
 a {
 	color: var(--site-fg, white);
+	border-radius: 5px;
+	outline-offset: 2px;
+	transition: all ease-in-out 100ms;
 }
 
 a:hover {
 	color: var(--color-accent, orangered);
-	text-decoration: none;
+	text-decoration-color: transparent;
 }
 
 p {
@@ -51,11 +54,19 @@ h1 {
 }
 
 /* classes */
+.tag {
+	border-radius: 5px;
+	border: .01em solid;
+	letter-spacing: 0.5px;
+	padding-inline: var(--space-xxs);
+	text-decoration: none;
+	text-transform: uppercase;
+}
 
 /* utilities */
 .list--inline {
 	list-style-type: none;
-	margin: 0;
+	margin-inline: 0;
 	padding: 0;
 }
 
@@ -94,6 +105,10 @@ h1 {
 	display: block;
 	height: 100%;
 	width: 100%;
+}
+
+.header__nav ul {
+	margin-block: 0;
 }
 
 /* footer */
