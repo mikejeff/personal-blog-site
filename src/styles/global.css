@@ -86,13 +86,15 @@ h1 {
 }
 
 .header__grid {
+	align-items: end;
 	display: grid;
 	gap:var(--space-sm);
+	grid-template-columns: auto 1fr;
 	padding-block: var(--space-lg);
 }
 
 .header__logo {
-	max-width: 5rem;
+	max-width: var(--s-5);
 }
 
 .header__logo a {
@@ -109,6 +111,7 @@ h1 {
 
 .header__nav ul {
 	margin-block: 0;
+	line-height: 1;
 }
 
 /* footer */
