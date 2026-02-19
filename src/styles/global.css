@@ -23,7 +23,6 @@ main {
 }
 
 a {
-	border-radius: 5px;
 	color: var(--site-fg, white);
 	outline-offset: 2px;
 	transition: all ease-in-out 100ms;
@@ -55,12 +54,15 @@ h1 {
 
 /* classes */
 .tag {
-	border-radius: 5px;
-	border: .01em solid;
+	background-color: var(--site-bg-light);
+	border: .01em solid var(--site-fg-muted);
 	letter-spacing: 0.5px;
-	padding-inline: var(--space-xxs);
+	padding-inline: var(--space-xs);
 	text-decoration: none;
-	text-transform: uppercase;
+}
+
+.tag:hover {
+	border-color: var(--color-accent, orangered);
 }
 
 /* utilities */
