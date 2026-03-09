@@ -6,6 +6,24 @@
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
+<script is:inline>
+  (function () {
+    // Check if the user has manually selected a theme before.
+    // If so, we stored it in localStorage under "theme".
+    const stored = localStorage.getItem('theme');
+
+    // Only apply the stored value if it's one of the themes we support.
+    // This avoids setting bad values on the dataset.
+    if (stored === 'light' || stored === 'dark') {
+      /* Apply the theme immediately to the <html> element.
+      * Because this runs in the <head>, it prevents a flash
+      * of the wrong theme before the component hydrates.
+      */
+      document.documentElement.dataset.theme = stored;
+    }
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
