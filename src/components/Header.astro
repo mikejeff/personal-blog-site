@@ -8,6 +8,14 @@ import Navigation from "./Navigation.astro";
 		<div class="header__logo">
 			<a href="/"><Logo /></a>
 		</div>
-			<Navigation />
+    <Navigation />
+    <theme-toggle class="header__theme-toggle">
+      <span id="theme-toggle">Dark mode</span>
+      <button  role="switch" aria-checked="false" aria-labelledby="theme-toggle">
+        <span>on</span>
+        <span>off</span>
+      </button>
+    </theme-toggle>
 	</div>
+<script type="module" src="/src/scripts/theme-toggle.js"></script>
 </header>
