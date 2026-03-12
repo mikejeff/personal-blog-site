@@ -5,12 +5,10 @@ import '../styles/global.css';
 ---
 <BaseLayout pageTitle={frontmatter.title}>
 	<h1>{frontmatter.headline}</h1>
-	<p><small>Written by {frontmatter.author} on {frontmatter.pubDate.toString().slice(0,10)}</small></p>
-
-<slot />
-
-<ul class="list--inline">
-	{frontmatter.tags.map((tag: string) => <li><a class = "tag" href={`/tags/${tag}`}>{tag}</a></li>)}
-</ul>
+	<slot />
+	<small>By {frontmatter.author} on {frontmatter.pubDate.toString().slice(0,10)}</small>
+	<ul class="list--inline">
+		{frontmatter.tags.map((tag: string) => <li><a class = "tag" href={`/tags/${tag}`}>{tag}</a></li>)}
+	</ul>
 
 </BaseLayout>
