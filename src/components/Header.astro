@@ -1,21 +1,42 @@
 ---
 import Logo from "./Site-logo.astro";
 import Navigation from "./Navigation.astro";
+import "../styles/header.css";
 ---
 
-<header class="header">
-	<div class="wrapper header__grid">
-		<div class="header__logo">
-			<a href="/"><Logo /></a>
-		</div>
-    <Navigation />
-    <theme-toggle class="header__theme-toggle">
-      <span id="theme-toggle">Dark mode</span>
-      <button  role="switch" aria-checked="false" aria-labelledby="theme-toggle">
-        <span>on</span>
-        <span>off</span>
-      </button>
-    </theme-toggle>
-	</div>
-<script type="text/javascript" src="../scripts/theme-toggle.js"></script>
+<header class="site-header">
+  <div class="wrapper">
+    <div class="site-header__grid">
+      <div class="site-header__logo">
+        <a href="/">
+          <Logo />
+        </a>
+      </div>
+
+      <div class="site-header__name">
+        <strong>Mike Jeffery</strong>
+        <span>Web Developer</span>
+      </div>
+
+      <nav class="site-header__nav">
+        <ul role="list">
+          <Navigation />
+        </ul>
+      </nav>
+
+      <theme-toggle class="site-header__theme-toggle">
+        <span id="theme-toggle">Dark mode</span>
+        <button
+          role="switch"
+          aria-checked="false"
+          aria-labelledby="theme-toggle"
+        >
+          <span>on</span>
+          <span>off</span>
+        </button>
+      </theme-toggle>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../scripts/theme-toggle.js"></script>
 </header>
