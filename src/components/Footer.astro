@@ -1,23 +1,35 @@
 ---
-import Social from './Social.astro';
+import Social from "./Social.astro";
+import "../styles/footer.css";
 ---
 
-<footer class="footer">
-	<div class="wrapper footer__grid stack stack-m">
-		<Social />
-			<div>
-				<small>© <span id="copyrightYear"></span> Michael R Jeffery. All rights reserved. Built with <a href="https://astro.build/">Astro</a>.</small>
-			</div>
-		<script>
-			const copyrightYear = document.getElementById("copyrightYear");
-			const year = new Date().getFullYear();
-			if (copyrightYear) {
-				if (year > 2025) {
-					copyrightYear.textContent = "2025-" + year.toString();
-				} else {
-					copyrightYear.textContent = year.toString();
-				}
-			}
-		</script>
-	</div>
+<footer class="site-footer">
+  <div class="site-footer__inner-wrap | wrapper flow">
+    <Social />
+    <div class="site-footer__copyright">
+      <p>
+        <small
+          >© <span id="copyrightYear">2025-2026</span> Michael R Jeffery. All rights
+          reserved.</small
+        >
+      </p>
+      <p>
+        <small
+          >Built with <a href="https://astro.build/">Astro</a> using semantic HTML,
+          modern CSS, and respect for the web platform.</small
+        >
+      </p>
+    </div>
+    <script>
+      const copyrightYear = document.getElementById("copyrightYear");
+      const year = new Date().getFullYear();
+      if (copyrightYear) {
+        if (year >= 2026) {
+          copyrightYear.textContent = "2025-" + year.toString();
+        } else {
+          copyrightYear.textContent = year.toString();
+        }
+      }
+    </script>
+  </div>
 </footer>
