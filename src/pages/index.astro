@@ -1,11 +1,78 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/homepage.css";
 const pageTitle = "Home | Mike Jeffery";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-	<h1>Mike Jeffery is a front-end developer near Boston, MA.</h1>
-	<p>I design and build websites with a focus on accessibility, performance, and long-term maintainability. I’ve spent years working primarily on the development side and bring a practical design sensibility to everything I build. I believe good websites should be simple, durable, and easy to use.</p>
-	<p>Currently, I work for a leader in the travel industry, where I’ve spent more than nine years building and improving the sites of some of the biggest names in travel.
-</p>
-	<p>My partner and I are raising two amazing kids in North Reading, about 20 miles north of Boston. In my spare time, I play music, love retro video games, and enjoy tinkering with electronics.</p>
+  <section class="homepage-hero">
+    <header>
+      <div class="homepage-hero__grid">
+        <div class="homepage-hero__image">
+          <img src="src/images/portrait.png" />
+        </div>
+
+        <div class="homepage-hero__heading">
+          <h1>
+            Hi, I'm Mike Jeffery. I work to make life easier for everyone on the
+            web.
+          </h1>
+        </div>
+      </div>
+
+      <p class="homepage-hero__text">
+        A front-end developer near Boston, MA. I've spent over a decade working
+        on systems to make websites durable and inclusive.
+      </p>
+    </header>
+  </section>
+  <section class="homepage-text">
+    <p>
+      I design and build websites focused on accessibility, performance, and
+      long-term maintainability. My approach brings practical design sensibility
+      to every project—I believe websites should be simple, durable, and easy to
+      use.
+    </p>
+    <p>
+      I've spent my career so far working for a leader in the travel industry
+      maintaining sites for major brands. Home is North Reading, where my
+      partner and I raise two amazing kids. I play music, collect retro video
+      games, and work on small electronics projects when the sun goes down.
+    </p>
+    <p><a href="/about">Read more about my journey</a></p>
+  </section>
+  <aside class="homepage-notes | flow">
+    <h2>Bench Notes</h2>
+    <div class="homepage-notes__list-wrap">
+      <div class="homepage-notes__list | flow">
+        <h3>Principles</h3>
+        <ul>
+          <li>Respect the platform.</li>
+          <li>Solve the right problem.</li>
+          <li>Simplicity scales.</li>
+          <li>Leave it better than you found it.</li>
+          <li>Prefer understanding over tooling.</li>
+          <li>Function creates beauty.</li>
+        </ul>
+      </div>
+      <div class="homepage-notes__list | flow">
+        <h3>Currently Inspired By</h3>
+        <ul>
+          <li>CUBE CSS</li>
+          <li>Mindful Design</li>
+          <li>The Nature and Art of Workmanship</li>
+          <li>Wabi-sabi</li>
+        </ul>
+      </div>
+      <div class="homepage-notes__list | flow">
+        <h3>On the Bench</h3>
+        <ul>
+          <li>Homepage redesign</li>
+          <li>CSS architecture experiments</li>
+          <li>Web Components</li>
+          <li>Notes on design systems</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 </BaseLayout>
