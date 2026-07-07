@@ -11,7 +11,7 @@ CUSTOM PROPERTIES AND CONFIGURATION
 
 /* Default flow space. Change this one value to change the overall flow */
 .prose {
-    --flow-space: var(--space-lg, 2rem);
+    --flow-space: var(--space-md, 2rem);
 }
 
 /* Increase legibility by limiting line lengths */
@@ -79,12 +79,12 @@ CUSTOM PROPERTIES AND CONFIGURATION
 
 /* Bump up the line height for paragraphs */
 .prose :is(p) {
-    line-height: 2;
+    line-height: var(--leading-normal);
 }
 
 /* Bump down the font weight for headings, dt, and strong */
 .prose :is(h1, h2, h3, h4, h5, h6, dt, strong) {
-    font-weight: var(--font-weight-semibold, 600);
+    /* font-weight: var(--font-weight-semibold, 600); */
 }
 
 .prose :is(blockquote) {
