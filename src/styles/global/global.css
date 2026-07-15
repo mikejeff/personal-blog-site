@@ -180,6 +180,17 @@ a {
   text-decoration: var(--link-decoration-default, underline);
   text-decoration-skip-ink: auto;
   text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.1em;
+  transition: all var(--transition-normal);
+}
+
+a:hover {
+  color: lch(from var(--color-text-link) l calc(c * 2.5) h);
+  text-decoration-thickness: 0.15em;
+}
+
+a:active {
+  text-decoration-thickness: 0.1em;
 }
 
 a code {
