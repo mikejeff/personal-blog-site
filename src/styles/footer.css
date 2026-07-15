@@ -1,5 +1,6 @@
 .site-footer {
   margin-block-start: var(--space-lg);
+    font-size: var(--text-sm);
 }
 
 .site-footer__inner-wrap {
@@ -11,7 +12,7 @@
 
 .site-footer__heading {
   font-family: var(--font-body);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
 }
 
 .site-footer__social-links-list {
