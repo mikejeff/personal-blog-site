@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/homepage.css";
+const pageTitle = "Page not found | Mike Jeffery";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section>
+    <header>
+      <div>
+        <div>
+          <h1>404</h1>
+        </div>
+      </div>
+
+      <p class="homepage-hero__text">
+        Well... this isn't where you meant to end up.
+      </p>
+    </header>
+  </section>
+  <section class="homepage-text | flow">
+    <p>
+      I probably got ahead of myself and linked to something that doesn't
+      exist&hellip; yet.
+    </p>
+    <p>No worries.</p>
+    <p><a id="back-link" href="#">Go back</a> or <a href="/">Return home</a></p>
+  </section>
+  <aside class="homepage-notes | flow">
+    <h2>Bench Notes</h2>
+    <div class="homepage-notes__list-wrap">
+      <div class="homepage-notes__list | flow">
+        <h3>TODO:</h3>
+        <ul style="list-style-type:none;">
+          <li>☐ Build this page.</li>
+          <li>✔ Return a proper 404 status.</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <!-- Psst... I appreciate your curiosity! I genuinely  -->
+</BaseLayout>
+
+<script>
+  const backLink = document.querySelector("#back-link");
+
+  backLink.addEventListener("click", (event) => {
+    if (window.history.length > 1) {
+      event.preventDefault();
+      history.back();
+    }
+  });
+</script>
