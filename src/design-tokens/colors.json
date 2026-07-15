@@ -80,13 +80,13 @@
           "$value": "{color.white}"
         },
         "lowered": {
-          "$value": "{color.neutral.100}"
+          "$value": "{color.crimson.100}"
         },
         "lowest": {
-          "$value": "{color.neutral.200}"
+          "$value": "{color.crimson.200}"
         },
         "border": {
-          "$value": "{color.neutral.200}"
+          "$value": "{color.crimson.200}"
         }
       },
       "text": {
