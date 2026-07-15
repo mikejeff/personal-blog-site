@@ -1,7 +1,6 @@
 {
   "color": {
     "$type": "color",
-
     "surface": {
       "default": {
         "$value": "{color.neutral.surface.default}"
@@ -19,8 +18,10 @@
         "$value": "{color.neutral.surface.border}"
       }
     },
-
     "text": {
+      "loud": {
+        "$value": "{color.neutral.text.loud}"
+      },
       "normal": {
         "$value": "{color.neutral.text.normal}"
       },
@@ -37,17 +38,16 @@
         "$value": "{color.neutral.text.link}"
       }
     },
-
     "neutral": {
       "surface": {
         "default": {
-          "$value": "{color.neutral.950}"
+          "$value": "{color.neutral.900}"
         },
         "raised": {
-          "$value": "{color.neutral.900}"
+          "$value": "{color.neutral.800}"
         },
         "lowered": {
-          "$value": "{color.neutral.900}"
+          "$value": "{color.neutral.950}"
         },
         "lowest": {
           "$value": "{color.neutral.800}"
@@ -57,6 +57,9 @@
         }
       },
       "text": {
+        "loud": {
+          "$value": "{color.neutral.50}"
+        },
         "normal": {
           "$value": "{color.neutral.300}"
         },
@@ -70,7 +73,7 @@
           "$value": "{color.neutral.500}"
         },
         "link": {
-          "$value": "{color.neutral.50}"
+          "$value": "{color.taupe.200}"
         }
       },
       "fill": {
@@ -107,7 +110,6 @@
         }
       }
     },
-
     "accent": {
       "fill": {
         "quiet": {
@@ -143,7 +145,6 @@
         }
       }
     },
-
     "success": {
       "fill": {
         "quiet": {
@@ -179,7 +180,6 @@
         }
       }
     },
-
     "warning": {
       "fill": {
         "quiet": {
@@ -215,7 +215,6 @@
         }
       }
     },
-
     "error": {
       "fill": {
         "quiet": {
@@ -251,7 +250,6 @@
         }
       }
     },
-
     "info": {
       "fill": {
         "quiet": {
@@ -287,7 +285,6 @@
         }
       }
     },
-
     "overlay": {
       "$value": "{color.alpha.black.50}"
     }
