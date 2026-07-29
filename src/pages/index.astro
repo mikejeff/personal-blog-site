@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/homepage.css";
+import { Image } from "astro:assets";
 const pageTitle = "Home | Mike Jeffery";
 ---
 
@@ -9,10 +10,10 @@ const pageTitle = "Home | Mike Jeffery";
     <header>
       <div class="homepage-hero__grid">
         <div class="homepage-hero__image">
-          <img
+          <Image
             width="300"
             height="300"
-            src="public/images/portrait.png"
+            src="/public/images/portrait.png"
             alt="An illustrated portrait of a slightly burly guy with an affable nature and a dark brown beard. He's wearing a black Montreal Expos cap and a gray t-shirt."
           />
         </div>
