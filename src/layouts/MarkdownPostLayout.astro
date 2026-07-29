@@ -1,14 +1,27 @@
 ---
 const { frontmatter } = Astro.props;
-import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout pageTitle={frontmatter.title}>
-	<h1>{frontmatter.headline}</h1>
-	<slot />
-	<small>By {frontmatter.author} on {frontmatter.pubDate.toString().slice(0,10)}</small>
-	<ul class="list--inline">
-		{frontmatter.tags.map((tag: string) => <li><a class = "tag" href={`/tags/${tag}`}>{tag}</a></li>)}
-	</ul>
 
+<BaseLayout pageTitle={frontmatter.title}>
+  <section class="prose flow">
+    <h1>{frontmatter.headline}</h1>
+    <slot />
+    <small
+      >By {frontmatter.author} on {
+        frontmatter.pubDate.toString().slice(0, 10)
+      }</small
+    >
+    <ul class="list--inline">
+      {
+        frontmatter.tags.map((tag: string) => (
+          <li>
+            <a class="tag" href={`/tags/${tag}`}>
+              {tag}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </BaseLayout>

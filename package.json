@@ -17,6 +17,8 @@
     "preact": "^10.26.4"
   },
   "devDependencies": {
+    "@sugarcube-sh/cli": "^0.1.19",
+    "@sugarcube-sh/vite": "^0.1.19",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1"
   }
