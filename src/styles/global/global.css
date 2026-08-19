@@ -473,6 +473,7 @@ pre {
   padding: var(--space-sm, 0.875rem);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  font-size:0.75em;
 }
 
 pre:has(code) {
