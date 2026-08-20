@@ -1,11 +1,52 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { SEO } from "astro-seo";
+// https://github.com/jonasmerlin/astro-seo#readme
+interface Props {
+  title: string;
+  description?: string;
+  titleTemplate?: string;
+  canonical?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  noarchive?: boolean;
+  nocache?: boolean;
+  robotsExtras?: string;
+  openGraph?: {
+    basic: {
+      title: string;
+      type: string;
+      image: string;
+      url: string;
+    };
+    optional?: {
+      audio?: string;
+      description?: string;
+      determiner?: string;
+      locale?: string;
+      localeAlternate?: Array<string>;
+      siteName?: string;
+      video?: string;
+    };
+  };
+}
+
 import "@fontsource-variable/source-serif-4";
 import "@fontsource-variable/source-sans-3";
 import "virtual:sugarcube.css";
 import "../styles/main.css";
-const { pageTitle } = Astro.props;
+const {
+  title,
+  description,
+  titleTemplate = "%s | Mike Jeffery",
+  noindex,
+  nofollow,
+  noarchive,
+  nocache,
+  robotsExtras,
+  openGraph,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -13,7 +54,17 @@ const { pageTitle } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <SEO
+      title={title}
+      description={description}
+      titleTemplate={titleTemplate}
+      titleDefault="Mike Jeffery | Front-end web developer"
+      noindex={noindex}
+      nofollow={nofollow}
+      noarchive={noarchive}
+      nocache={nocache}
+      robotsExtras={robotsExtras}
+    />
   </head>
   <body>
     <Header />
