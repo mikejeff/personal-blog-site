@@ -3,7 +3,7 @@ const { frontmatter } = Astro.props;
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout title={frontmatter.title} ; description={frontmatter.description} ;>
   <section class="prose flow">
     <h1>{frontmatter.headline}</h1>
     <slot />

@@ -1,18 +1,29 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BlogPost from '../components/BlogPost.astro';
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
-const pageTitle = "Mike Jeffery | Recent Posts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+const allPosts = Object.values(
+  import.meta.glob("./posts/*.md", { eager: true }),
+);
 
 // Sort by date: Newest to Oldest
-allPosts.sort((a:any, b:any) => 
-  Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+allPosts.sort(
+  (a: any, b: any) =>
+    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate),
 );
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-	<h1>Recent Posts:</h1>
-	<ul>
-		{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-	</ul>
+<BaseLayout
+  title="Recent Posts"
+  ;
+  description="Posts about the web and other miscellany"
+  ;
+>
+  <h1>Recent Posts:</h1>
+  <ul>
+    {
+      allPosts.map((post: any) => (
+        <BlogPost url={post.url} title={post.frontmatter.title} />
+      ))
+    }
+  </ul>
 </BaseLayout>

@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: "Teaching Your Colors to Make Their Own Friends"
 headline: "Teaching Your Colors to Make Their Own Friends"
 pubDate: 2026-08-18
-description: 'A way to pair contrasting background/foreground colors automatically'
+description: 'A way to pair contrasting background/foreground colors automatically using contrast-color() and if()'
 author: 'Mike Jeffery'
 image:
     url: '/images/posts/teletubbies.webp'
