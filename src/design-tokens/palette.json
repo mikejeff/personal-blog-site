@@ -192,12 +192,12 @@
         "$value": {
           "colorSpace": "oklch",
           "components": [
-            0.556,
+            0.5990,
             0,
             0
           ],
           "alpha": 1,
-          "hex": "#737373"
+          "hex": "#808080"
         }
       },
       "600": {
