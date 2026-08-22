@@ -47,6 +47,20 @@ const {
   robotsExtras,
   openGraph,
 } = Astro.props;
+
+const og = {
+  basic: {
+    title,
+    type: "website",
+    image: "https://mikejeff.com/images/opengraph/default.png",
+    ...openGraph?.basic,
+  },
+  optional: {
+    description,
+    siteName: "Mike Jeffery",
+    ...openGraph?.optional,
+  },
+};
 ---
 
 <html lang="en">
@@ -64,6 +78,7 @@ const {
       noarchive={noarchive}
       nocache={nocache}
       robotsExtras={robotsExtras}
+      openGraph={og}
     />
   </head>
   <body>
