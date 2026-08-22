@@ -6,7 +6,6 @@ const allPosts = Object.values(
 const tags = [
   ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
 ];
-const pageTitle = "Mike Jeffery | Tag Index";
 ---
 
 <BaseLayout
