@@ -1,24 +1,25 @@
 ---
+import { Debug } from "astro:components";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SEO } from "astro-seo";
 // https://github.com/jonasmerlin/astro-seo#readme
 interface Props {
-  title: string;
-  description?: string;
-  titleTemplate?: string;
   canonical?: string;
-  noindex?: boolean;
-  nofollow?: boolean;
+  description?: string;
   noarchive?: boolean;
   nocache?: boolean;
+  nofollow?: boolean;
+  noindex?: boolean;
   robotsExtras?: string;
+  title: string;
+  titleTemplate?: string;
   openGraph?: {
-    basic: {
-      title: string;
-      type: string;
-      image: string;
-      url: string;
+    basic?: {
+      title?: string;
+      type?: string;
+      image?: string;
+      url?: string;
     };
     optional?: {
       audio?: string;
@@ -32,32 +33,35 @@ interface Props {
   };
 }
 
-import "@fontsource-variable/source-serif-4";
-import "@fontsource-variable/source-sans-3";
+// import "@fontsource-variable/source-serif-4";
+// import "@fontsource-variable/source-sans-3";
 import "virtual:sugarcube.css";
 import "../styles/main.css";
 const {
-  title,
+  canonical,
   description,
-  titleTemplate = "%s | Mike Jeffery",
-  noindex,
-  nofollow,
   noarchive,
   nocache,
-  robotsExtras,
+  nofollow,
+  noindex,
   openGraph,
+  robotsExtras,
+  title,
+  titleTemplate = "%s | Mike Jeffery",
 } = Astro.props;
 
 const og = {
   basic: {
-    title,
-    type: "website",
-    image: "https://mikejeff.com/images/opengraph/default.png",
-    ...openGraph?.basic,
+    title: openGraph?.basic?.title ?? title,
+    type: openGraph?.basic?.type ?? "website",
+    image:
+      openGraph?.basic?.image ??
+      "https://mikejeff.com/images/opengraph/default.png",
+    url: openGraph?.basic?.url ?? canonical ?? Astro.url.href,
   },
   optional: {
-    description,
-    siteName: "Mike Jeffery",
+    description: openGraph?.optional?.description ?? description,
+    siteName: openGraph?.optional?.siteName ?? "Mike Jeffery",
     ...openGraph?.optional,
   },
 };
@@ -69,20 +73,22 @@ const og = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <SEO
-      title={title}
+      canonical={canonical}
       description={description}
-      titleTemplate={titleTemplate}
-      titleDefault="Mike Jeffery | Front-end web developer"
-      noindex={noindex}
-      nofollow={nofollow}
       noarchive={noarchive}
       nocache={nocache}
-      robotsExtras={robotsExtras}
+      nofollow={nofollow}
+      noindex={noindex}
       openGraph={og}
+      robotsExtras={robotsExtras}
+      title={title}
+      titleDefault="Mike Jeffery | Front-end web developer"
+      titleTemplate={titleTemplate}
     />
   </head>
   <body>
     <Header />
+    <!-- <Debug {og} /> -->
     <main class="wrapper">
       <article>
         <slot />
