@@ -1,0 +1,116 @@
+---
+interface Props {
+  description?: string;
+  fullTitle?: string;
+  nofollow?: boolean;
+  noindex?: boolean;
+  ogDescription?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogPublishedTime?: string;
+  ogTags?: string[];
+  ogTitle?: string;
+  ogType?: string;
+  title?: string;
+}
+
+const pageUrl = Astro.url.href;
+
+// const ogImage = "/images/opengraph/default.png";
+
+const {
+  description,
+  fullTitle,
+  nofollow = false,
+  noindex = false,
+  ogDescription,
+  ogImage,
+  ogImageAlt,
+  ogPublishedTime,
+  ogTags = [],
+  ogTitle,
+  ogType,
+  title,
+} = Astro.props;
+
+const pageTitle =
+  fullTitle ??
+  (title
+    ? `${title} | Mike Jeffery`
+    : "Mike Jeffery | Front-end web developer");
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="canonical" href= {pageUrl} />
+
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex" />}
+{nofollow && <meta name="robots" content="nofollow" />}
+
+<title>{pageTitle}</title>
+
+ {/* OpenGraph: basic (required) */}
+{
+  ogTitle ? (
+    <meta property="og:title" content={ogTitle} />
+  ) : (
+    <meta property="og:title" content={pageTitle} />
+  )
+}
+
+{
+  ogType ? (
+    <meta property="og:type" content={ogType} />
+  ) : (
+    <meta property="og:type" content="website" />
+  )
+}
+
+<meta property="og:url" content={pageUrl} />
+
+{
+  ogImage ? (
+    <meta property="og:image" content={`${Astro.url.origin}${ogImage}`} />
+    <meta property="og:image:alt" content= {ogImageAlt} />
+  ) : (
+    <meta
+      property="og:image"
+      content={`${Astro.url.origin}/images/opengraph/default.png`}
+    />
+    <meta
+      property="og:image:alt"
+      content="Mike Jeffery. HTML, CSS, and a love for the web."
+    />
+  )
+}
+
+{/* OpenGraph: optional for ALL */}
+{
+  ogDescription ? (
+    <meta property="og:description" content={ogDescription} />
+  ) : (
+    <meta property="og:description" content={description} />
+  )
+
+}
+
+{/* OpenGraph: optional for articles */}
+{
+  ogType === "article" && (
+    <>
+      {<meta property="article:author" content="Mike Jeffery" />}
+      {<meta property="article:section" content="Web Development" />}
+      {ogPublishedTime && (
+        <meta property="article:published_time" content={ogPublishedTime} />
+      )}
+      {ogTags.map((ogTags) => (
+        <meta property="article:tag" content={ogTags} />
+      ))}
+    </>
+  )
+}
+
+{/* article:modified_time - datetime - When the article was last changed. */}

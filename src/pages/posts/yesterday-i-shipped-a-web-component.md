@@ -5,9 +5,9 @@ headline: "Yesterday, I shipped a web component"
 pubDate: 2026-03-11
 description: 'My first web component was a dark theme toggle for this site.'
 author: 'Mike Jeffery'
-image:
-    url: ' '
-    alt: ' '
+# image:
+#     url: ' '
+#     alt: ' '
 tags: ["web components", "changelog"]
 ---
 
@@ -50,6 +50,6 @@ And now I understand Web Components better than I did a week ago.
 
 ## What’s next
 
-It’s an MVP, but I’ll probably enhance it over time. 
+It’s an MVP, but I’ll probably enhance it over time.
 
 But for now, it works. And it shipped.
