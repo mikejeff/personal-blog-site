@@ -3,7 +3,15 @@ const { frontmatter } = Astro.props;
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title={frontmatter.title} ; description={frontmatter.description} ;>
+<BaseLayout
+  description={frontmatter.description}
+  ogImage={frontmatter.ogImage}
+  ogImageAlt={frontmatter.ogImageAlt}
+  ogPublishedTime={frontmatter.pubDate}
+  ogTags={frontmatter.tags}
+  ogType="article"
+  title={frontmatter.title}
+>
   <section class="prose flow">
     <h1>{frontmatter.headline}</h1>
     <slot />

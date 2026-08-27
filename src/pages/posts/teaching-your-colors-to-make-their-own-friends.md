@@ -9,6 +9,16 @@ image:
     url: '/images/posts/teletubbies.webp'
     alt: 'Color palettes'
 tags: ["css", "colors"]
+ogImage: '/images/posts/teletubbies.webp'
+ogImageAlt: From left to right, Tinky-Winky, Dipsy, Po and Laa-Laa pose in a grassy landscape with some of their favorite accessories. Tinky-Winky holds a red handbag, Dipsy wears a cow-spotted top hat, and Po poses on a scooter wearing a helmet. Laa-Laa looks on at the three in wonder.
+
+# openGraph:
+#   basic:
+#     title: "The Case for Progressive Enhancement"
+#     image: "https://mikejeff.com/images/opengraph/progressive-enhancement.png"
+#   optional:
+#     description: "Why progressive enhancement is still one of the best ways to build resilient websites."
+#     siteName: "Mike Jeffery"
 ---
 
 ![From left to right, Tinky-Winky, Dipsy, Po and Laa-Laa pose in a grassy landscape with some of their favorite accessories. Tinky-Winky holds a red handbag, Dipsy wears a cow-spotted top hat, and Po poses on a scooter wearing a helmet. Laa-Laa looks on at the three in wonder.](/images/posts/teletubbies.webp)
