@@ -6,11 +6,11 @@ pubDate: 2026-08-18
 description: 'A way to pair contrasting background/foreground colors automatically using contrast-color() and if()'
 author: 'Mike Jeffery'
 image:
-    url: '/images/posts/teletubbies.webp'
-    alt: 'Color palettes'
+    url: '/images/posts/teletubbies.jpg'
+    alt: "The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!"
 tags: ["css", "colors"]
-ogImage: '/images/posts/teletubbies.webp'
-ogImageAlt: From left to right, Tinky-Winky, Dipsy, Po and Laa-Laa pose in a grassy landscape with some of their favorite accessories. Tinky-Winky holds a red handbag, Dipsy wears a cow-spotted top hat, and Po poses on a scooter wearing a helmet. Laa-Laa looks on at the three in wonder.
+ogImage: '/images/posts/teletubbies.jpg'
+ogImageAlt: "The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!"
 
 # openGraph:
 #   basic:
@@ -21,7 +21,7 @@ ogImageAlt: From left to right, Tinky-Winky, Dipsy, Po and Laa-Laa pose in a gra
 #     siteName: "Mike Jeffery"
 ---
 
-![From left to right, Tinky-Winky, Dipsy, Po and Laa-Laa pose in a grassy landscape with some of their favorite accessories. Tinky-Winky holds a red handbag, Dipsy wears a cow-spotted top hat, and Po poses on a scooter wearing a helmet. Laa-Laa looks on at the three in wonder.](/images/posts/teletubbies.webp)
+![The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!](/images/posts/teletubbies.jpg)
 
 Like anyone, I nerd out on design systems and web components all the time. Totally normal, right?
 

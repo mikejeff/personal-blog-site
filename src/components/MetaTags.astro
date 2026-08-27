@@ -71,21 +71,29 @@ const pageTitle =
 
 <meta property="og:url" content={pageUrl} />
 
+ {/* OpenGraph: basic: image */}
+
 {
   ogImage ? (
     <meta property="og:image" content={`${Astro.url.origin}${ogImage}`} />
+    <meta property="og:image:secure_url" content={`${Astro.url.origin}${ogImage}`} />
     <meta property="og:image:alt" content= {ogImageAlt} />
   ) : (
     <meta
       property="og:image"
-      content={`${Astro.url.origin}/images/opengraph/default.png`}
+      content={`${Astro.url.origin}/images/opengraph/default.jpg`}
     />
+    <meta property="og:image:secure_url" content={`${Astro.url.origin}/images/opengraph/default.jpg`} />
     <meta
       property="og:image:alt"
       content="Mike Jeffery. HTML, CSS, and a love for the web."
     />
   )
 }
+
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
 {/* OpenGraph: optional for ALL */}
 {
