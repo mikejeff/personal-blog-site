@@ -40,19 +40,22 @@ const pageTitle =
     : "Mike Jeffery | Front-end web developer");
 ---
 
+{/* Document basics */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
+{/* Primary SEO */}
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
 <link rel="canonical" href= {pageUrl} />
 
-<meta name="description" content={description} />
+{/* Robots */}
 {noindex && <meta name="robots" content="noindex" />}
 {nofollow && <meta name="robots" content="nofollow" />}
 
-<title>{pageTitle}</title>
 
- {/* OpenGraph: basic (required) */}
+{/* OpenGraph: basic (required) */}
 {
   ogTitle ? (
     <meta property="og:title" content={ogTitle} />
@@ -120,5 +123,11 @@ const pageTitle =
     </>
   )
 }
+
+{/* Icons / PWA */}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 {/* article:modified_time - datetime - When the article was last changed. */}
