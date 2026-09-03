@@ -6,10 +6,10 @@ pubDate: 2026-08-18
 description: 'A way to pair contrasting background/foreground colors automatically using contrast-color() and if()'
 author: 'Mike Jeffery'
 image:
-    url: '/images/posts/teletubbies.jpg'
+    url: '../../images/posts/teletubbies.jpg'
     alt: "The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!"
 tags: ["css", "colors"]
-ogImage: '/images/posts/teletubbies.jpg'
+ogImage: '/images/opengraph/posts/teletubbies.jpg'
 ogImageAlt: "The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!"
 
 # openGraph:
@@ -21,7 +21,7 @@ ogImageAlt: "The Teletubbies pop up from their hiding spots behind small hills t
 #     siteName: "Mike Jeffery"
 ---
 
-![The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!](/images/posts/teletubbies.jpg)
+![The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!](../../images/posts/teletubbies.jpg)
 
 Like anyone, I nerd out on design systems and web components all the time. Totally normal, right?
 
