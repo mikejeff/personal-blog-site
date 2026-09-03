@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/homepage.css";
 import { Image } from "astro:assets";
+import portraitImage from '../images/portrait.png';
 ---
 
 <BaseLayout
@@ -15,7 +16,7 @@ import { Image } from "astro:assets";
           <Image
             width="300"
             height="300"
-            src="/images/portrait.png"
+            src={portraitImage}
             alt="An illustrated portrait of a slightly burly guy with an affable nature and a dark brown beard. He's wearing a black Montreal Expos cap and a gray t-shirt."
           />
         </div>
