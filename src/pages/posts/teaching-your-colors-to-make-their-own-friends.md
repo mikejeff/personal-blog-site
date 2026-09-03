@@ -9,7 +9,7 @@ image:
     url: '../../images/posts/teletubbies.jpg'
     alt: "The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!"
 tags: ["css", "colors"]
-ogImage: '/images/posts/teletubbies.jpg'
+ogImage: '/images/opengraph/posts/teletubbies.jpg'
 ogImageAlt: "The Teletubbies pop up from their hiding spots behind small hills to say hello. They're happy to see you!"
 
 # openGraph:
