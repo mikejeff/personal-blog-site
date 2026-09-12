@@ -1,0 +1,10 @@
+[data-mode="docs"] main {
+  --type-scale: 0.9;
+  --density-scale: 0.7;
+  --font-heading: var(--font-sans);
+
+  font-size: calc(
+    var(--body-default, var(--text-base, 1rem))
+    * var(--type-scale, 1)
+  );
+}
