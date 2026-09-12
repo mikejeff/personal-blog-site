@@ -1,0 +1,16 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/docs.css";
+---
+
+<BaseLayout
+  description={frontmatter.description}
+  title={frontmatter.title}
+  mode="docs"
+>
+  <section class="flow">
+    <h1>{frontmatter.headline}</h1>
+    <slot />
+  </section>
+</BaseLayout>

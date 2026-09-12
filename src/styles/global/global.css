@@ -78,27 +78,27 @@ h6 {
 }
 
 h1 {
-  font-size: var(--heading-1, var(--text-4xl, 2.25rem));
+  font-size: calc(var(--heading-1, var(--text-4xl, 2.25rem)) * var(--type-scale, 1));
 }
 
 h2 {
-  font-size: var(--heading-2, var(--text-3xl, 1.875rem));
+  font-size: calc(var(--heading-2, var(--text-3xl, 1.875rem)) * var(--type-scale, 1));
 }
 
 h3 {
-  font-size: var(--heading-3, var(--text-2xl, 1.5rem));
+  font-size: calc(var(--heading-3, var(--text-2xl, 1.5rem)) * var(--type-scale, 1));
 }
 
 h4 {
-  font-size: var(--heading-4, var(--text-xl, 1.25rem));
+  font-size: calc(var(--heading-4, var(--text-xl, 1.25rem)) * var(--type-scale, 1));
 }
 
 h5 {
-  font-size: var(--text-lg, 1.125rem);
+  font-size: calc(var(--text-lg, 1.125rem) * var(--type-scale, 1));
 }
 
 h6 {
-  font-size: var(--text-base, 1rem);
+  font-size: calc(var(--text-base, 1rem) * var(--type-scale, 1));
 }
 
 p {
@@ -140,7 +140,7 @@ blockquote {
 }
 
 blockquote footer {
-  margin-block-start: var(--space-sm, 1rem);
+  margin-block-start: calc(var(--space-sm, 1rem) * var(--density-scale, 1));
   font-style: normal;
 }
 
@@ -159,7 +159,7 @@ q {
 hr {
   border: 0;
   border-block-start: var(--border-width-thin, 1px) var(--border-style, solid) var(--color-surface-border, currentColor);
-  margin-block: var(--flow-space, var(--space-xl, 2rem));
+  margin-block: calc(var(--flow-space, var(--space-xl, 2rem)) * var(--density-scale, 1));
 }
 
 abbr {
@@ -238,13 +238,13 @@ dt {
 
 /* Form Structure */
 form>*+* {
-  margin-block-start: var(--space-sm, 1rem);
+  margin-block-start: calc(var(--space-sm, 1rem) * var(--density-scale, 1));
 }
 
 fieldset {
   margin-inline: 0;
   border: var(--panel-border-width, 1px) var(--border-style, solid) var(--panel-border-color, currentColor);
-  padding: var(--space-sm, 1rem);
+  padding: calc(var(--space-sm, 1rem) * var(--density-scale, 1));
 }
 
 legend {
@@ -470,7 +470,7 @@ samp {
 
 pre {
   white-space: pre-wrap;
-  padding: var(--space-sm, 0.875rem);
+  padding: calc(var(--space-sm, 0.875rem) * var(--density-scale, 1));
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   font-size:0.75em;
@@ -496,7 +496,7 @@ kbd {
       var(--radius-md, 0.25rem));
   font-size: 0.825em;
   display: inline-flex;
-  gap: var(--space-3xs, 0.25rem);
+  gap: calc(var(--space-3xs, 0.25rem) * var(--density-scale, 1));
   justify-content: center;
   align-items: center;
   vertical-align: middle;
@@ -551,7 +551,7 @@ svg:not([class]) {
 svg[role="img"] {
   width: revert;
   height: revert;
-  padding: var(--space-xs, 0.75rem);
+  padding: calc(var(--space-xs, 0.75rem) * var(--density-scale, 1));
 }
 
 /* ============================================
@@ -566,8 +566,8 @@ table {
 
 td,
 th {
-  padding-block: var(--space-xs, 0.75rem);
-  padding-inline: var(--space-sm, 1rem);
+  padding-block: calc(var(--space-xs, 0.75rem) * var(--density-scale, 1));
+  padding-inline: calc(var(--space-sm, 1rem) * var(--density-scale, 1));
 }
 
 th {
@@ -577,7 +577,7 @@ th {
 }
 
 thead th {
-  padding-block: var(--space-sm, 1rem);
+  padding-block:  calc(var(--space-sm, 1rem) * var(--density-scale, 1));
 }
 
 th:not(:only-of-type) {
@@ -598,7 +598,7 @@ tr+tr :is(th, td) {
 
 caption {
   caption-side: bottom;
-  margin-block-start: var(--space-sm, 1rem);
+  margin-block-start: calc(var(--space-sm, 1rem) * var(--density-scale, 1));
 }
 
 /* ============================================
@@ -610,7 +610,7 @@ summary {
 }
 
 [open]>summary {
-  margin-block-end: var(--space-xs, 0.75rem);
+  margin-block-end: calc(var(--space-xs, 0.75rem) * var(--density-scale, 1));
 }
 
 /* ============================================
