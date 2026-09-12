@@ -18,6 +18,7 @@ interface Props {
   ogTitle?: string;
   ogType?: string;
   title?: string;
+  mode?: string;
 }
 
 const {
@@ -33,10 +34,11 @@ const {
   ogTitle,
   ogType,
   title,
+  mode
 } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-mode={mode}>
   <head>
     <MetaTags
       description={description}
