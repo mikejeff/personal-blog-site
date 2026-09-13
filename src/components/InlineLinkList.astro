@@ -1,0 +1,27 @@
+---
+interface Props {
+  heading: string;
+links: {
+  label: string;
+  href: string;
+}[]
+}
+
+const {
+  heading,
+  links = [],
+} = Astro.props;
+
+---
+
+<section> 
+  <h2 class="site-footer__heading">{heading}</h2>
+  <ul role="list" class="site-footer__social-links-list">
+  
+    {links.map((link) => (
+      <li>
+        <a href={link.href}>{link.label}</a>
+      </li>
+    ))}
+  </ul>
+</section>

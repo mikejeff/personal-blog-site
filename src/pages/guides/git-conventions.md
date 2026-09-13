@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/DocsLayout.astro
-title: "Git Conventions Cheat Sheet"
-headline: "Git Conventions Cheat Sheet"
+title: "Git Conventions"
+headline: "Git Conventions"
 pubDate: 2026-08-18
-description: 'A reference for frequently used and forgotten git conventions'
+description: 'A reference for frequently used and often forgotten git conventions'
 author: 'Mike Jeffery'
 ---
 
