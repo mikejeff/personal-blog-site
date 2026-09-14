@@ -7,7 +7,8 @@ description: 'A reference for frequently used and often forgotten git convention
 author: 'Mike Jeffery'
 ---
 
-
+Use the following conventions to keep branch names and commit messages consistent. 
+ 
 ## Commit messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/):
